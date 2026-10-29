@@ -2,6 +2,8 @@
 
 NutriTrack is a modern, lightweight, and responsive daily diet and nutrition tracker website built with HTML5, CSS3, and vanilla JavaScript.
 
+**Live Demo**: [https://binduka41-lang.github.io/diet-tracker/](https://binduka41-lang.github.io/diet-tracker/)
+
 ## Features
 
 - **Daily Calorie & Macro Tracking**: Real-time progress bars for calories, protein, carbs, and fats against daily targets.
