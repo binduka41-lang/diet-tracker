@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NutriTrack | Diet Tracker</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#"><span class="brand-icon">🥑</span> NutriTrack</a>
+    <span class="date-label" id="todayDate"></span>
+  </header>
+
+  <main class="container">
+    <section class="welcome">
+      <div>
+        <p class="eyebrow">YOUR DAILY WELLNESS</p>
+        <h1>Eat well. Feel great.</h1>
+        <p class="muted">Small choices today make a healthier you tomorrow.</p>
+      </div>
+      <div class="welcome-emoji" aria-hidden="true">🥗</div>
+    </section>
+
+    <section class="stats-grid">
+      <article class="card calorie-card">
+        <div class="card-heading"><span>Calories</span><span class="stat-icon">🔥</span></div>
+        <div class="calorie-number"><strong id="caloriesConsumed">0</strong><span> / <span id="calorieGoal">2000</span> kcal</span></div>
+        <div class="progress-track"><div id="calorieProgress" class="progress-fill"></div></div>
+        <p class="small muted"><span id="caloriesRemaining">2000</span> kcal remaining</p>
+      </article>
+      <article class="card nutrient-card">
+        <div class="card-heading"><span>Protein</span><span class="stat-icon">💪</span></div>
+        <div class="metric"><strong id="proteinTotal">0</strong><span> g</span></div>
+        <div class="progress-track"><div id="proteinProgress" class="progress-fill protein-fill"></div></div>
+        <p class="small muted">Daily goal: 100 g</p>
+      </article>
+      <article class="card nutrient-card">
+        <div class="card-heading"><span>Carbs</span><span class="stat-icon">🌾</span></div>
+        <div class="metric"><strong id="carbsTotal">0</strong><span> g</span></div>
+        <div class="progress-track"><div id="carbsProgress" class="progress-fill carbs-fill"></div></div>
+        <p class="small muted">Daily goal: 250 g</p>
+      </article>
+      <article class="card nutrient-card">
+        <div class="card-heading"><span>Fats</span><span class="stat-icon">🥜</span></div>
+        <div class="metric"><strong id="fatsTotal">0</strong><span> g</span></div>
+        <div class="progress-track"><div id="fatsProgress" class="progress-fill fats-fill"></div></div>
+        <p class="small muted">Daily goal: 65 g</p>
+      </article>
+    </section>
+
+    <div class="content-grid">
+      <section class="card food-section">
+        <div class="section-heading">
+          <div><p class="eyebrow">FOOD JOURNAL</p><h2>Today's meals</h2></div>
+          <button class="secondary-btn" id="resetButton" type="button">Reset day</button>
+        </div>
+
+        <form id="foodForm" class="food-form">
+          <div class="form-row">
+            <label>Food name
+              <input id="foodName" type="text" placeholder="e.g. 2 boiled eggs" required maxlength="70">
+            </label>
+            <label>Meal
+              <select id="mealType">
+                <option value="Breakfast">Breakfast</option>
+                <option value="Lunch">Lunch</option>
+                <option value="Dinner">Dinner</option>
+                <option value="Snacks">Snacks</option>
+              </select>
+            </label>
+          </div>
+          <div class="form-row nutrient-inputs">
+            <label>Calories (kcal)<input id="foodCalories" type="number" min="0" max="10000" placeholder="150" required></label>
+            <label>Protein (g)<input id="foodProtein" type="number" min="0" max="1000" step="0.1" placeholder="12" value="0" required></label>
+            <label>Carbs (g)<input id="foodCarbs" type="number" min="0" max="1000" step="0.1" placeholder="20" value="0" required></label>
+            <label>Fats (g)<input id="foodFats" type="number" min="0" max="1000" step="0.1" placeholder="5" value="0" required></label>
+          </div>
+          <button class="primary-btn" type="submit">+ Add food</button>
+        </form>
+
+        <div id="mealLists" class="meal-lists"></div>
+        <p id="emptyState" class="empty-state">No food logged yet. Add your first meal above!</p>
+      </section>
+
+      <aside class="side-column">
+        <section class="card water-card">
+          <div class="section-heading">
+            <div><p class="eyebrow">STAY HYDRATED</p><h2>Water intake</h2></div>
+            <span class="water-emoji">💧</span>
+          </div>
+          <div class="water-count"><strong id="waterCount">0</strong><span> / 8 glasses</span></div>
+          <div id="waterGlasses" class="water-glasses" aria-label="Water glasses"></div>
+          <p class="small muted">One glass is counted as about 250 ml.</p>
+          <div class="water-actions">
+            <button id="addWater" class="primary-btn" type="button">+ Add glass</button>
+            <button id="removeWater" class="secondary-btn" type="button">− Remove</button>
+          </div>
+        </section>
+
+        <section class="card tip-card">
+          <div class="tip-icon">🌱</div>
+          <h2>Daily reminder</h2>
+          <p>Focus on balanced meals, enough water, and consistency. You don't need to be perfect every day.</p>
+        </section>
+
+        <section class="card goal-card">
+          <h2>Daily calorie goal</h2>
+          <p class="small muted">Set a personal target for your dashboard.</p>
+          <label class="goal-control">Calories per day
+            <input id="goalInput" type="number" min="500" max="10000" value="2000">
+          </label>
+          <button id="saveGoal" class="secondary-btn full-width" type="button">Save goal</button>
+        </section>
+      </aside>
+    </div>
+
+    <footer>NutriTrack · A simple way to build mindful eating habits.</footer>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>

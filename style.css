@@ -1,0 +1,116 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap');
+
+:root {
+  --green: #287c5a;
+  --green-dark: #1d6548;
+  --green-light: #e8f5ed;
+  --ink: #1d2c25;
+  --muted: #78857e;
+  --line: #e8eee9;
+  --bg: #f5f8f5;
+  --white: #ffffff;
+  --shadow: 0 8px 26px rgba(34, 66, 48, 0.055);
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--bg); color: var(--ink); font-family: 'DM Sans', sans-serif; }
+button, input, select { font: inherit; }
+button { cursor: pointer; }
+.topbar { height: 72px; display: flex; align-items: center; justify-content: space-between; padding: 0 max(5vw, calc((100vw - 1200px)/2)); background: #fff; border-bottom: 1px solid var(--line); }
+.brand { display: flex; align-items: center; gap: 10px; font: 800 21px 'Manrope', sans-serif; color: var(--ink); text-decoration: none; letter-spacing: -.6px; }
+.brand-icon { display: grid; place-items: center; width: 38px; height: 38px; border-radius: 12px; background: var(--green-light); font-size: 22px; }
+.date-label { color: var(--muted); font-size: 13px; }
+.container { max-width: 1200px; width: 90%; margin: 30px auto 20px; }
+.welcome { min-height: 165px; border-radius: 22px; padding: 30px 38px; display: flex; justify-content: space-between; align-items: center; background: linear-gradient(115deg, #e7f4e9, #f5f8e9); overflow: hidden; }
+.eyebrow { margin: 0 0 8px; color: var(--green); font-size: 10px; font-weight: 700; letter-spacing: 1.7px; }
+h1, h2, p { margin-top: 0; }
+h1 { font: 800 clamp(27px, 4vw, 38px) 'Manrope', sans-serif; letter-spacing: -1.4px; margin-bottom: 8px; }
+h2 { font: 700 18px 'Manrope', sans-serif; margin-bottom: 0; letter-spacing: -.3px; }
+.muted { color: var(--muted); }
+.welcome .muted { margin-bottom: 0; font-size: 14px; }
+.welcome-emoji { font-size: 80px; margin-right: 25px; transform: rotate(-8deg); }
+.stats-grid { display: grid; grid-template-columns: 1.4fr 1fr 1fr 1fr; gap: 16px; margin: 20px 0; }
+.card { background: var(--white); border: 1px solid #edf1ed; border-radius: 17px; padding: 22px; box-shadow: var(--shadow); min-width: 0; }
+.card-heading { display: flex; align-items: center; justify-content: space-between; color: #64736a; font-size: 13px; font-weight: 600; margin-bottom: 15px; }
+.stat-icon { font-size: 18px; }
+.calorie-number { display: flex; align-items: baseline; gap: 6px; margin-bottom: 16px; }
+.calorie-number strong, .metric strong { font: 800 29px 'Manrope', sans-serif; letter-spacing: -.8px; }
+.calorie-number > span, .metric > span { color: var(--muted); font-size: 12px; }
+.metric { margin: 0 0 16px; }
+.progress-track { width: 100%; height: 7px; background: #eef2ef; border-radius: 20px; overflow: hidden; }
+.progress-fill { height: 100%; width: 0; background: #e6a64e; border-radius: inherit; transition: width .3s ease; }
+.protein-fill { background: #3c9b75; }
+.carbs-fill { background: #78a9d8; }
+.fats-fill { background: #b09adf; }
+.small { font-size: 11px; margin: 10px 0 0; }
+.content-grid { display: grid; grid-template-columns: minmax(0, 1.7fr) minmax(270px, .8fr); gap: 20px; align-items: start; }
+.food-section { padding: 25px; }
+.section-heading { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-bottom: 22px; }
+.section-heading .eyebrow { margin-bottom: 5px; }
+.primary-btn, .secondary-btn { border: 0; border-radius: 10px; padding: 11px 15px; font-size: 12px; font-weight: 700; transition: .2s; }
+.primary-btn { background: var(--green); color: #fff; }
+.primary-btn:hover { background: var(--green-dark); transform: translateY(-1px); }
+.secondary-btn { background: #f1f5f2; color: #43574a; }
+.secondary-btn:hover { background: #e4ece6; }
+.food-form { padding: 18px; border-radius: 13px; background: #f8faf8; border: 1px solid var(--line); }
+.form-row { display: grid; grid-template-columns: 1.4fr 1fr; gap: 12px; margin-bottom: 13px; }
+.nutrient-inputs { grid-template-columns: repeat(4, 1fr); }
+label { display: flex; flex-direction: column; gap: 7px; font-size: 11px; font-weight: 700; color: #596a60; }
+input, select { min-width: 0; width: 100%; border: 1px solid #e0e8e1; border-radius: 8px; background: white; padding: 10px; outline: none; color: var(--ink); font-size: 12px; }
+input:focus, select:focus { border-color: #70a88b; box-shadow: 0 0 0 3px #e5f3e9; }
+.food-form > .primary-btn { width: 100%; margin-top: 2px; }
+.meal-lists { margin-top: 24px; }
+.meal-group { margin-bottom: 20px; }
+.meal-title { display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; font-size: 13px; font-weight: 700; }
+.meal-title span:last-child { color: var(--muted); font-size: 11px; font-weight: 500; }
+.food-item { display: flex; align-items: center; gap: 11px; padding: 12px 0; border-bottom: 1px solid #f0f3f0; }
+.food-symbol { width: 37px; height: 37px; flex-shrink: 0; display: grid; place-items: center; border-radius: 11px; background: var(--green-light); font-size: 18px; }
+.food-details { min-width: 0; flex: 1; }
+.food-details strong { display: block; font-size: 12px; overflow-wrap: anywhere; }
+.food-details span { display: block; margin-top: 4px; font-size: 10px; color: var(--muted); }
+.food-calories { text-align: right; font-size: 12px; font-weight: 700; white-space: nowrap; }
+.delete-food { border: 0; background: transparent; color: #a0aaa3; font-size: 18px; padding: 5px; }
+.delete-food:hover { color: #c44e4e; }
+.empty-state { padding: 24px 10px; text-align: center; font-size: 12px; color: var(--muted); }
+.side-column { display: grid; gap: 17px; }
+.water-emoji { font-size: 25px; }
+.water-count { margin: 7px 0 17px; }
+.water-count strong { font: 800 30px 'Manrope', sans-serif; }
+.water-count span { font-size: 12px; color: var(--muted); }
+.water-glasses { display: grid; grid-template-columns: repeat(8, 1fr); gap: 6px; margin-bottom: 14px; }
+.glass { border: 1px solid #d9e9f3; border-radius: 7px; background: #f0f8fc; height: 33px; color: #a4cddd; display: grid; place-items: center; font-size: 15px; padding: 0; }
+.glass.filled { background: #d8f0fa; color: #238bb7; border-color: #a9dced; }
+.water-actions { display: flex; gap: 8px; margin-top: 16px; }
+.water-actions button { flex: 1; padding: 10px 7px; }
+.tip-card { background: #f0f7ee; border-color: #e5f0e2; box-shadow: none; }
+.tip-icon { font-size: 25px; margin-bottom: 11px; }
+.tip-card h2 { margin-bottom: 9px; }
+.tip-card p { color: #66776a; font-size: 12px; line-height: 1.7; margin-bottom: 0; }
+.goal-card h2 { margin-bottom: 7px; }
+.goal-control { margin: 16px 0 12px; }
+.full-width { width: 100%; }
+footer { text-align: center; padding: 28px 0 12px; color: #9aa59e; font-size: 11px; }
+@media (max-width: 900px) {
+  .stats-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .content-grid { grid-template-columns: 1fr; }
+  .side-column { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .goal-card { grid-column: span 2; }
+}
+@media (max-width: 560px) {
+  .topbar { height: 62px; padding: 0 5%; }
+  .date-label { font-size: 10px; }
+  .container { width: 92%; margin-top: 18px; }
+  .welcome { padding: 23px; min-height: 150px; }
+  .welcome-emoji { font-size: 55px; margin-right: 0; }
+  .welcome .muted { max-width: 240px; line-height: 1.5; font-size: 12px; }
+  .stats-grid { gap: 10px; margin: 14px 0; }
+  .card { padding: 17px; border-radius: 14px; }
+  .calorie-number strong, .metric strong { font-size: 24px; }
+  .calorie-number { flex-wrap: wrap; }
+  .food-section { padding: 16px; }
+  .food-form { padding: 12px; }
+  .form-row { grid-template-columns: 1fr 1fr; }
+  .nutrient-inputs { grid-template-columns: 1fr 1fr; }
+  .side-column { grid-template-columns: 1fr; }
+  .goal-card { grid-column: auto; }
+  .section-heading { align-items: flex-start; }
+}
